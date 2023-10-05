@@ -17,4 +17,17 @@ public class FreelancerAwardsService {
     public List<FreelancerAwardsModel> getdata(){
         return fari.findAll();
     }
+
+    public FreelancerAwardsModel savedata(FreelancerAwardsModel fam){
+        return fari.save(fam);
+    }
+
+    public FreelancerAwardsModel updatedata(FreelancerAwardsModel fam,int id){
+        fam.setId(id);
+        return fari.save(fam);
+    }
+
+    public void deletedata(int id){
+        fari.deleteById(id);
+    }
 }

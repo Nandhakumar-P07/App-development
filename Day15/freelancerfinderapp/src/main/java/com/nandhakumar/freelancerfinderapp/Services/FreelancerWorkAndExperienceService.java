@@ -17,4 +17,17 @@ public class FreelancerWorkAndExperienceService {
     public List<FreelancerWorkAndExperienceModel> getdata(){
         return fweri.findAll();
     }
+
+    public FreelancerWorkAndExperienceModel savedata(FreelancerWorkAndExperienceModel fem){
+        return fweri.save(fem);
+    }
+
+    public FreelancerWorkAndExperienceModel updatedata(FreelancerWorkAndExperienceModel fem,int id){
+        fem.setId(id);
+        return fweri.save(fem);
+    }
+
+    public void deletedata(int id){
+        fweri.deleteById(id);
+    }
 }

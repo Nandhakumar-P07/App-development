@@ -17,4 +17,17 @@ public class FreelancerEducationService {
     public List<FreelancerEducationModel> getdata(){
         return feri.findAll();
     }
+
+    public FreelancerEducationModel savedata(FreelancerEducationModel fem){
+        return feri.save(fem);
+    }
+
+    public FreelancerEducationModel updatedata(FreelancerEducationModel fem,int id){
+        fem.setId(id);
+        return feri.save(fem);
+    }
+
+    public void deletedata(int id){
+        feri.deleteById(id);
+    }
 }

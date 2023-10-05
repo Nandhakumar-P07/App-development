@@ -17,4 +17,17 @@ public class FreelancerProjectsService {
     public List<FreelancerProjectsModel> getdata(){
         return fpri.findAll();
     }
+
+    public FreelancerProjectsModel savedata(FreelancerProjectsModel fem){
+        return fpri.save(fem);
+    }
+
+    public FreelancerProjectsModel updatedata(FreelancerProjectsModel fem,int id){
+        fem.setId(id);
+        return fpri.save(fem);
+    }
+
+    public void deletedata(int id){
+        fpri.deleteById(id);
+    }
 }
